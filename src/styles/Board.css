@@ -1,0 +1,97 @@
+.sudoku-board {
+  display: grid;
+  /* Use CSS Variable for size, default to auto */
+  grid-template-columns: repeat(var(--size), auto);
+  
+  /* Dark background acts as the thin border lines between cells */
+  background-color: #444; 
+  gap: 1px;
+  border: 4px solid #444;
+  
+  /* Centering */
+  margin: 0 auto; 
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+  border-radius: 8px;
+  
+  /* Prevent stretching/shrinking */
+  width: fit-content;
+  user-select: none;
+}
+
+.cell {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* BIGGER CELLS */
+  width: 70px;
+  height: 70px;
+  
+  /* BIGGER TEXT */
+  font-size: 2.2rem; 
+  font-weight: 700;
+  color: #333;
+  
+  position: relative;
+  cursor: default;
+  transition: background-color 0.1s;
+}
+
+/* --- STATES --- */
+.cell.fixed { color: #000; font-weight: 900; }
+.cell.tentative { color: #2e7d32; } /* Dark Green */
+
+.cell.active { 
+  background-color: #fff9c4 !important; 
+  /* Use box-shadow for highlight so it doesn't shift layout */
+  box-shadow: inset 0 0 0 3px #fbc02d; 
+  z-index: 10;
+}
+.cell.error { 
+  background-color: #ffcdd2 !important; 
+  color: #b71c1c;
+}
+.cell.backtrack { animation: flashRed 0.4s ease; }
+
+/* Small Domain Numbers */
+.cell-domain {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%; height: 100%; padding: 2px;
+}
+.domain-val { 
+  display: flex; justify-content: center; align-items: center;
+  font-size: 0.75rem; /* Bigger domain numbers */
+  font-weight: 600; color: #777;
+}
+
+/* --- JIGSAW BORDERS (The Fix) --- */
+/* We use box-shadow inset to draw thick borders INSIDE the cell.
+   This prevents the grid from breaking or misaligning. */
+.border-right {
+    box-shadow: inset -3px 0 0 0 #444;
+}
+.border-bottom {
+    box-shadow: inset 0 -3px 0 0 #444;
+}
+/* Handle both borders on one cell */
+.border-right.border-bottom {
+    box-shadow: inset -3px 0 0 0 #444, inset 0 -3px 0 0 #444;
+}
+
+/* Region Backgrounds */
+.region-0 { background-color: #e3f2fd; }
+.region-1 { background-color: #f3e5f5; }
+.region-2 { background-color: #e8f5e9; }
+.region-3 { background-color: #fff3e0; }
+.region-4 { background-color: #fce4ec; }
+.region-5 { background-color: #e0f7fa; }
+.region-6 { background-color: #fffde7; }
+.region-7 { background-color: #f1f8e9; }
+.region-8 { background-color: #efebe9; }
+
+@keyframes flashRed {
+  0% { background-color: #ff5252; }
+  100% { background-color: inherit; }
+}
