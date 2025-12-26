@@ -1,14 +1,16 @@
 {
   "name": "sudoku-solver",
-  "homepage": "https://github.com/Amkhodaei83/csp-sudoku-visualizer",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://Amkhodaei83.github.io/csp-sudoku-visualizer",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@lottiefiles/react-lottie-player": "^3.6.0",
@@ -30,7 +32,7 @@
     "eslint-plugin-react": "^7.35.0",
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.9",
-    "gh-pages": "^6.3.0",
+    "gh-pages": "^6.1.1",
     "vite": "^5.4.1"
   }
 }
