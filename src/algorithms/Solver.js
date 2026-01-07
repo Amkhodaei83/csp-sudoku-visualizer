@@ -9,6 +9,17 @@ export function* solveGenerator(csp, options = {}) {
 
     let nodesExpanded = 0;
     let backtracks = 0;
+    yield* log(`Starting... MRV:${useMRV} LCV:${useLCV} FC:${useForwardChecking}`);
+
+    // --- ADD THIS SAFETY CHECK ---
+    // Check if initialization already found an error (empty domain)
+    for(let i=0; i<csp.totalCells; i++) {
+        if(csp.board[i] === 0 && csp.domains[i].length === 0) {
+             yield* log(`Error: Puzzle is invalid from the start at cell ${i}`);
+             yield { type: 'DONE', success: false };
+             return;
+        }
+    }
 
     // Helper to Deep Copy domains so React sees changes
     const getDomainSnapshot = () => {

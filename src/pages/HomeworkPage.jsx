@@ -240,6 +240,7 @@ const HomeworkPage = () => {
                 <ResultModal status={winStatus} onClose={() => setWinStatus(null)} />
 
                 {/* --- CUSTOM HEADER CARD (Requested Style) --- */}
+                {/* --- CUSTOM HEADER CARD (FIXED LAYOUT) --- */}
                 <div className="card mb-4" style={{ 
                     background: 'linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05))',
                     backdropFilter: 'blur(10px)',
@@ -247,60 +248,17 @@ const HomeworkPage = () => {
                     borderRadius: '16px',
                     padding: '20px'
                 }}>
-                    <div className="d-flex justify-between items-center wrap-mobile gap-4">
-                        <div style={{ flex: 1, width: '100%' }}>
-                            <div className="d-flex items-center gap-2 mb-2">
-                                <h2 className="m-0 text-xl" style={{ color: 'white' }}>Jigsaw: 6x6 Generator</h2>
-                                <span className="badge badge-info text-xs">{JIGSAW_MAPS[currentMapIndex].name}</span>
-                            </div>
-                            
-                            {/* The Slider Row */}
-                            <div className="d-flex items-center gap-4 mt-2" style={{ width: '100%' }}>
-                                <span className="text-sm font-bold whitespace-nowrap" style={{ color: 'rgba(255,255,255,0.9)', minWidth: '100px' }}>
-                                    Difficulty: {Math.floor(difficulty * 100)}%
-                                </span>
-                                
-                                <input 
-                                    type="range" 
-                                    min="0.2" 
-                                    max="0.8" 
-                                    step="0.1" 
-                                    value={difficulty} 
-                                    onChange={(e) => setDifficulty(parseFloat(e.target.value))}
-                                    style={{ 
-                                        flex: 1,
-                                        height: '8px',
-                                        cursor: 'pointer',
-                                        accentColor: '#00d2ff',
-                                        borderRadius: '5px'
-                                    }}
-                                />
-
-                                <button 
-                                    onClick={handleGenerate} 
-                                    style={{ 
-                                        padding: '10px 25px', 
-                                        fontSize: '14px', 
-                                        fontWeight: 'bold',
-                                        borderRadius: '8px',
-                                        backgroundColor: 'white',
-                                        color: '#1976d2',
-                                        border: 'none',
-                                        boxShadow: '0 4px 10px rgba(0,0,0,0.2)',
-                                        cursor: 'pointer',
-                                        transition: 'transform 0.2s',
-                                        whiteSpace: 'nowrap'
-                                    }}
-                                    onMouseOver={(e) => e.target.style.transform = 'scale(1.05)'}
-                                    onMouseOut={(e) => e.target.style.transform = 'scale(1)'}
-                                >
-                                    Generate New
-                                </button>
-                            </div>
+                    
+                    {/* ROW 1: Title (Left) and Metrics (Right) */}
+                    <div className="d-flex justify-between items-start mb-4">
+                        {/* Title Section */}
+                        <div className="d-flex items-center gap-2">
+                            <h2 className="m-0 text-xl" style={{ color: 'white' }}>Jigsaw: 6x6 Generator</h2>
+                            <span className="badge badge-info text-xs">{JIGSAW_MAPS[currentMapIndex].name}</span>
                         </div>
 
-                        {/* Metrics Widget */}
-                        <div className="d-flex gap-4 text-right pl-4" style={{ borderLeft: '1px solid rgba(255,255,255,0.1)' }}>
+                        {/* Metrics Widget (Moved Up) */}
+                        <div className="d-flex gap-4 text-right">
                             <div>
                                 <span className="text-xl font-bold block line-height-1" style={{ color: '#00d2ff' }}>{metrics.nodesExpanded}</span>
                                 <span className="text-xs text-muted" style={{ color: 'rgba(255,255,255,0.7)' }}>Nodes</span>
@@ -311,7 +269,52 @@ const HomeworkPage = () => {
                             </div>
                         </div>
                     </div>
+
+                    {/* ROW 2: Slider Controls (Full Width) */}
+                    <div className="d-flex items-center gap-4" style={{ width: '100%' }}>
+                        <span className="text-sm font-bold whitespace-nowrap" style={{ color: 'rgba(255,255,255,0.9)', minWidth: '100px' }}>
+                            Difficulty: {Math.floor(difficulty * 100)}%
+                        </span>
+                        
+                        <input 
+                            type="range" 
+                            min="0.2" 
+                            max="0.8" 
+                            step="0.1" 
+                            value={difficulty} 
+                            onChange={(e) => setDifficulty(parseFloat(e.target.value))}
+                            style={{ 
+                                flex: 1,
+                                height: '8px',
+                                cursor: 'pointer',
+                                accentColor: '#00d2ff',
+                                borderRadius: '5px'
+                            }}
+                        />
+
+                        <button 
+                            onClick={() => handleGenerate(false)} 
+                            style={{ 
+                                padding: '10px 25px', 
+                                fontSize: '14px', 
+                                fontWeight: 'bold',
+                                borderRadius: '8px',
+                                backgroundColor: 'white',
+                                color: '#1976d2',
+                                border: 'none',
+                                boxShadow: '0 4px 10px rgba(0,0,0,0.2)',
+                                cursor: 'pointer',
+                                transition: 'transform 0.2s',
+                                whiteSpace: 'nowrap'
+                            }}
+                            onMouseOver={(e) => e.target.style.transform = 'scale(1.05)'}
+                            onMouseOut={(e) => e.target.style.transform = 'scale(1)'}
+                        >
+                            Generate New
+                        </button>
+                    </div>
                 </div>
+                {/* ------------------------------------------- */}
                 {/* ------------------------------------------- */}
 
                 <div className="grid-layout" style={{ display: 'flex', gap: '20px', flexDirection: 'column' }}>

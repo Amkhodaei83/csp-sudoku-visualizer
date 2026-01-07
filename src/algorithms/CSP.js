@@ -6,7 +6,7 @@ export class CSP {
         this.board = [...initialBoard];
         this.regionMapper = regionMapper;
         
-        // Initialize Domains
+        // 1. Initialize Domains (Standard)
         this.domains = {};
         for (let i = 0; i < this.totalCells; i++) {
             if (this.board[i] !== 0) {
@@ -18,6 +18,13 @@ export class CSP {
 
         this.neighbors = {}; 
         this._buildConstraintGraph();
+        for (let i = 0; i < this.totalCells; i++) {
+            if (this.board[i] !== 0) {
+                const val = this.board[i];
+                // We reuse your existing pruneNeighbors function!
+                this.pruneNeighbors(i, val);
+            }
+        }
     }
 
     _buildConstraintGraph() {

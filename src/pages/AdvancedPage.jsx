@@ -225,66 +225,67 @@ const AdvancedPage = () => {
                 <ResultModal status={winStatus} onClose={() => setWinStatus(null)} />
 
                 {/* Header Card with Generator Controls */}
+{/* Header Card with Generator Controls (FIXED LAYOUT) */}
                 <div className="card card-compact mb-4">
-    <div className="d-flex justify-between items-center wrap-mobile gap-4">
-        <div style={{ flex: 1, width: '100%' }}>
-            <h2 className="m-0 text-xl" style={{ color: 'white', marginBottom: '10px' }}>Advanced: 9x9 Generator</h2>
-            
-            {/* The Slider Row */}
-            <div className="d-flex items-center gap-4 mt-2" style={{ width: '100%' }}>
-                <span className="text-sm font-bold whitespace-nowrap" style={{ color: 'rgba(255,255,255,0.9)', minWidth: '100px' }}>
-                    Difficulty: {Math.floor(difficulty * 100)}%
-                </span>
-                
-                <input 
-                    type="range" 
-                    min="0" 
-                    max="1" 
-                    step="0.1" 
-                    value={difficulty} 
-                    onChange={(e) => setDifficulty(parseFloat(e.target.value))}
-                    className="slider-primary" 
-                    style={{ 
-                        flex: 1,                // This makes it stretch to fill space
-                        height: '12px',         // Makes the track thicker
-                        cursor: 'pointer',
-                        accentColor: '#00d2ff', // Matching that bright blue in your image
-                        outline: 'none'
-                    }}
-                />
+                    
+                    {/* ROW 1: Title and Metrics */}
+                    <div className="d-flex justify-between items-start mb-3">
+                        <h2 className="m-0 text-xl" style={{ color: 'white' }}>Advanced: 9x9 Generator</h2>
 
-                <button 
-                    onClick={handleGenerate} 
-                    className="btn-primary-sm"
-                    style={{ 
-                        padding: '10px 25px', 
-                        fontSize: '14px', 
-                        fontWeight: 'bold',
-                        borderRadius: '8px',
-                        backgroundColor: 'white',
-                        color: '#1976d2',
-                        border: 'none',
-                        boxShadow: '0 4px 10px rgba(0,0,0,0.2)'
-                    }}
-                >
-                    Generate New
-                </button>
-            </div>
-        </div>
+                        {/* Metrics Widget (Moved Up) */}
+                        <div className="d-flex gap-4 text-right">
+                            <div>
+                                <span className="text-xl font-bold text-primary block line-height-1" style={{ color: '#00d2ff' }}>{metrics.nodesExpanded}</span>
+                                <span className="text-xs text-muted" style={{ color: 'white' }}>Nodes</span>
+                            </div>
+                            <div>
+                                <span className="text-xl font-bold text-error block line-height-1" style={{ color: '#ff4d4d' }}>{metrics.backtracks}</span>
+                                <span className="text-xs text-muted" style={{ color: 'white' }}>Backtracks</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    {/* ROW 2: The Slider Row */}
+                    <div className="d-flex items-center gap-4" style={{ width: '100%' }}>
+                        <span className="text-sm font-bold whitespace-nowrap" style={{ color: 'rgba(255,255,255,0.9)', minWidth: '100px' }}>
+                            Difficulty: {Math.floor(difficulty * 100)}%
+                        </span>
+                        
+                        <input 
+                            type="range" 
+                            min="0" 
+                            max="1" 
+                            step="0.1" 
+                            value={difficulty} 
+                            onChange={(e) => setDifficulty(parseFloat(e.target.value))}
+                            className="slider-primary" 
+                            style={{ 
+                                flex: 1,                
+                                height: '12px',         
+                                cursor: 'pointer',
+                                accentColor: '#00d2ff', 
+                                outline: 'none'
+                            }}
+                        />
 
-        {/* Standardized Metrics Widget */}
-        <div className="d-flex gap-4 text-right">
-            <div>
-                <span className="text-xl font-bold text-primary block line-height-1" style={{ color: '#00d2ff' }}>{metrics.nodesExpanded}</span>
-                <span className="text-xs text-muted" style={{ color: 'white' }}>Nodes</span>
-            </div>
-            <div>
-                <span className="text-xl font-bold text-error block line-height-1" style={{ color: '#ff4d4d' }}>{metrics.backtracks}</span>
-                <span className="text-xs text-muted" style={{ color: 'white' }}>Backtracks</span>
-            </div>
-        </div>
-    </div>
-</div>
+                        <button 
+                            onClick={handleGenerate} 
+                            className="btn-primary-sm"
+                            style={{ 
+                                padding: '10px 25px', 
+                                fontSize: '14px', 
+                                fontWeight: 'bold',
+                                borderRadius: '8px',
+                                backgroundColor: 'white',
+                                color: '#1976d2',
+                                border: 'none',
+                                boxShadow: '0 4px 10px rgba(0,0,0,0.2)'
+                            }}
+                        >
+                            Generate New
+                        </button>
+                    </div>
+                </div>
 
                 <div className="grid-layout" style={{ display: 'flex', gap: '20px', flexDirection: 'column' }}>
                     
