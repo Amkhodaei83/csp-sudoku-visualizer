@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Project Submission | CSP Sudoku</title>
+    
+    <!-- FONTS -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.3/misc/Farsi-Digits/font-face.css" rel="stylesheet">
+
+    <style>
+        /* ==========================================================================
+           PASTED CSS THEME (Minified/Optimized for Single File)
+           ========================================================================== */
+        @layer reset, base, components, utilities;
+
+        /* --- VARIABLES --- */
+        :root {
+            --font-main: 'Vazirmatn', sans-serif;
+            --bg-body: #050507;
+            --bg-glass: rgba(20, 25, 35, 0.6);
+            --bg-glass-hover: rgba(30, 35, 45, 0.85);
+            --primary: #00C2FF;
+            --primary-glow: rgba(0, 194, 255, 0.3);
+            --success: #00ff88;
+            --warning: #ffaa00;
+            --error: #ff3366;
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
+            --border: rgba(255, 255, 255, 0.1);
+            --radius: 24px;
+        }
+
+        body.light-mode {
+            --bg-body: #F3F5F9;
+            --bg-glass: rgba(255, 255, 255, 0.85);
+            --bg-glass-hover: rgba(255, 255, 255, 0.95);
+            --primary: #0066FF;
+            --text-main: #334155;
+            --border: rgba(0, 0, 0, 0.08);
+        }
+
+        /* --- RESET & BASE --- */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-main);
+            background: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+            transition: background-color 0.4s;
+        }
+
+        /* --- ORBS --- */
+        .orb-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; pointer-events: none; }
+        .orb { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.6; animation: drift 30s infinite alternate; }
+        .orb-1 { top: -5%; right: -5%; width: 50vw; height: 50vw; background: var(--primary); animation-duration: 30s; }
+        .orb-2 { bottom: -5%; left: -5%; width: 60vw; height: 60vw; background: #7000ff; animation-duration: 45s; }
+        .orb-3 { top: 30%; left: 30%; width: 40vw; height: 40vw; background: #ff0055; opacity: 0.4; animation-duration: 35s; }
+        @keyframes drift {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(-10vw, 15vh) rotate(360deg); }
+        }
+
+        /* --- COMPONENTS --- */
+        .layout-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .chapter-card {
+            background: var(--bg-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: var(--radius);
+            padding: 40px;
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 10px; color: var(--text-main); text-shadow: 0 0 20px var(--primary-glow); }
+        h2 { color: var(--primary); font-size: 1.5rem; margin-bottom: 30px; }
+        p.lead { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 40px; max-width: 800px; margin-inline: auto; }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 20px;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-main);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            background: var(--bg-glass-hover);
+            border-color: var(--primary);
+            box-shadow: 0 15px 30px var(--primary-glow);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary), #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn {
+            background: var(--primary);
+            color: #000;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 12px;
+            font-weight: bold;
+            margin-top: 20px;
+            width: 100%;
+            transition: 0.3s;
+        }
+        .btn:hover { filter: brightness(1.2); letter-spacing: 1px; }
+
+        /* --- UTILITIES --- */
+        .text-muted { color: var(--text-muted); }
+        .badge { background: rgba(0, 194, 255, 0.1); color: var(--primary); padding: 5px 12px; border-radius: 15px; font-size: 0.8rem; border: 1px solid var(--primary); }
+
+        /* Floating Actions */
+        .floating-actions { position: fixed; bottom: 30px; left: 30px; display: flex; gap: 15px; z-index: 100; }
+        .float-btn { width: 50px; height: 50px; border-radius: 50%; background: var(--bg-glass); border: 1px solid var(--border); color: var(--text-main); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: 0.3s; font-size: 1.2rem; backdrop-filter: blur(10px); }
+        .float-btn:hover { background: var(--primary); color: #000; transform: rotate(45deg); }
+        
+        /* Animations */
+        .animate-fade-in { animation: fadeIn 1s ease-out; }
+        .animate-slide-up { animation: slideUp 0.8s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .grid-3 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. BACKGROUND ORBS -->
+    <div class="orb-container">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- 2. FLOATING CONTROLS -->
+    <div class="floating-actions">
+        <button class="float-btn" onclick="toggleTheme()" id="theme-toggle" title="تغییر تم">☀</button>
+        <a href="https://github.com/Amkhodaei83" class="float-btn" style="text-decoration: none;" title="پروفایل گیت‌هاب">😼</a>
+    </div>
+
+    <!-- 3. MAIN CONTENT (Centered Layout) -->
+    <main class="layout-center">
+        
+        <div class="chapter-card animate-fade-in">
+            <!-- Header Section -->
+            <div class="animate-slide-up">
+                <span class="badge mb-4">پروژه هوش مصنوعی (AI Project)</span>
+                <h1>حل‌کننده بصری <span style="color: var(--primary);">سودوکوی ۶×۶</span></h1>
+                <h2>با بلوک‌های نامتقارن (Jigsaw CSP)</h2>
+                
+                <p class="lead">
+                این پروژه شامل پیاده‌سازی کامل الگوریتم‌های 
+                    Backtracking, MRV, LCV, Forward Checking و AC-3 می‌باشد که در قالبی بصری و تعاملی ارائه شده است.
+                </p>
+            </div>
+
+            <!-- The 3 Main Links Grid -->
+            <div class="grid-3 animate-slide-up" style="animation-delay: 0.2s;">
+
+                <!-- 1. DEMO LINK -->
+                <a href="https://amkhodaei83.github.io/csp-sudoku-visualizer" target="_blank" class="card">
+                    <div class="card-icon">▶</div>
+                    <h3>اجرای زنده (Live Demo)</h3>
+                    <p class="text-muted text-sm">مشاهده عملکرد الگوریتم‌ها به صورت بصری در مرورگر</p>
+                    <button class="btn">مشاهده دمو</button>
+                </a>
+
+                <!-- 2. REPORT LINK -->
+                <a href="https://github.com/Amkhodaei83/csp-sudoku-visualizer/blob/main/report.md" target="_blank" class="card">
+                    <div class="card-icon">📄</div>
+                    <h3>گزارش فنی (Report)</h3>
+                    <p class="text-muted text-sm">توضیحات مدل‌سازی CSP، تحلیل الگوریتم‌ها و نمودارها</p>
+                    <button class="btn" style="background: transparent; border: 2px solid var(--primary); color: var(--text-main);">خواندن گزارش</button>
+                </a>
+
+                <!-- 3. CODE LINK -->
+                <a href="https://github.com/Amkhodaei83/csp-sudoku-visualizer" target="_blank" class="card">
+                    <div class="card-icon">&lt;/&gt;</div>
+                    <h3>سورس کد (Source)</h3>
+                    <p class="text-muted text-sm">بررسی کدهای React و پیاده‌سازی منطق Generator</p>
+                    <button class="btn" style="background: #24292e; color: white;">مخزن گیت‌هاب</button>
+                </a>
+
+            </div>
+
+            <div class="mt-8 text-muted text-sm animate-fade-in" style="margin-top: 50px;">
+                طراحی و پیاده‌سازی توسط <strong style="color: var(--primary)">Amir Hossein Khodaei</strong>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- 4. JS LOGIC -->
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            const btn = document.getElementById('theme-toggle');
+            btn.innerText = document.body.classList.contains('light-mode') ? '☾' : '☀';
+        }
+    </script>
+</body>
+</html>

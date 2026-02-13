@@ -35,9 +35,9 @@ const HomeworkPage = () => {
     const [isPlaying, setIsPlaying] = useState(false);
     const [speed, setSpeed] = useState(50);
     const [algOptions, setAlgOptions] = useState({
-        useMRV: true,
+        useMRV: false,
         useLCV: false,
-        useForwardChecking: true
+        useForwardChecking: false
     });
 
     const solverIterRef = useRef(null);
@@ -147,7 +147,7 @@ const HomeworkPage = () => {
         else setRobotStatus('thinking');
 
         const newFrame = {
-            board: [...value.board],
+            board: value.board ? [...value.board] : [...board],
             domains: value.domains || domains,
             activeCell: value.activeCell,
             errorCell: (value.type === 'PRUNE_FAIL' || value.type === 'BACKTRACK') ? value.activeCell : null,

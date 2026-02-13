@@ -35,9 +35,9 @@ const AdvancedPage = () => {
     const [isPlaying, setIsPlaying] = useState(false);
     const [speed, setSpeed] = useState(80);
     const [algOptions, setAlgOptions] = useState({
-        useMRV: true,
+        useMRV: false,
         useLCV: false,
-        useForwardChecking: true
+        useForwardChecking: false
     });
 
     const solverIterRef = useRef(null);

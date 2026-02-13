@@ -24,11 +24,11 @@ const Layout = ({ children, robotStatus, robotSpeed }) => {
         <aside className={isSidebarOpen ? 'active' : ''} style={{ display: 'flex', flexDirection: 'column' }}>
           
           {/* 1. Header */}
-          <div className="mb-6 text-center">
+          <div className="mb-1 text-center">
             <h2 style={{ fontSize: '1.5rem', margin: 0, color: 'var(--primary)', textShadow: '0 0 10px var(--primary-glow)' }}>
-                🧩 AI Sudoku
+                🧩 CSP Sudoku
             </h2>
-            <p className="text-muted text-xs uppercase tracking-widest mt-1">Visualizer v2.0</p>
+            <p className="text-muted text-center text-xs uppercase tracking-widest" style={{fontSize:'1rem'}} >Amir Hossein Khodaei</p>
           </div>
           
           {/* 2. Better Nav Buttons (Glass Pill Style) */}
@@ -59,6 +59,7 @@ const Layout = ({ children, robotStatus, robotSpeed }) => {
         <button className="float-btn" onClick={toggleTheme}>
           {isLightMode ? <Moon size={20} /> : <Sun size={20} />}
         </button>
+        <a href="https://github.com/Amkhodaei83" className="float-btn" title="پروفایل گیت‌هاب">😼</a>
       </div>
 
       {/* Internal CSS for the Nav Pill */}

@@ -6,7 +6,6 @@
   "homepage": "https://Amkhodaei83.github.io/csp-sudoku-visualizer",
   "scripts": {
     "dev": "vite",
-     "build": "react-scripts build && npm run deploy",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
