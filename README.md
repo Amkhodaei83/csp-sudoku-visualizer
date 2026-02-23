@@ -1,5 +1,3 @@
-# 🧩 CSP Sudoku Visualizer & AI Solver
-
 <!-- SEO: Primary Keywords included in the H1 and Hero image alt text -->
 <div align="center">
 
@@ -24,21 +22,16 @@
   <a href="https://vitejs.dev">
     <img src="https://img.shields.io/badge/Vite-Fast-646CFF?style=for-the-badge&logo=vite" alt="Bundled with Vite">
   </a>
-  <a href="https://amkhodaei83.github.io/csp-sudoku-visualizer">
-    <img src="https://img.shields.io/github/deployments/Amkhodaei83/csp-sudoku-visualizer/github-pages?style=for-the-badge&label=Deployment" alt="GitHub Pages Status">
-  </a>
+
 </p>
 
 <!-- Action Buttons -->
 <p align="center">
   <a href="https://amkhodaei83.github.io/csp-sudoku-visualizer">
-    <img src="https://img.shields.io/badge/🚀_Live_Demo-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="View Live Demo">
+    <img src="https://img.shields.io/badge/🔴_Live_Demo-Play_Now-ffd700?style=for-the-badge&logoColor=black" alt="View Live Demo" height="35">
   </a>
-  <a href="https://github.com/Amkhodaei83/csp-sudoku-visualizer/blob/main/report.md">
-    <img src="https://img.shields.io/badge/📄_Technical_Report-2ea44f?style=for-the-badge&logo=googledocs&logoColor=white" alt="Read Technical Report">
-  </a>
-  <a href="https://github.com/Amkhodaei83/csp-sudoku-visualizer/issues">
-    <img src="https://img.shields.io/badge/🐛_Report_Bug-CB2431?style=for-the-badge&logo=github&logoColor=white" alt="Report a Bug">
+  <a href="#-getting-started">
+    <img src="https://img.shields.io/badge/SETUP_LOCALLY-222222?style=flat-square&logo=github&logoColor=white" alt="Setup Local Development Environment" height="35" />
   </a>
 </p>
 
@@ -49,6 +42,8 @@
 ---
 
 ## 📑 Table of Contents
+<details>
+<summary><strong>Expand to view full navigation</strong></summary>
 
 - [🤖 About The Project](#-about-the-project)
   - [Core Logic & Algorithms](#core-logic--algorithms)
@@ -61,6 +56,8 @@
 - [🤝 Contributing](#-contributing)
 - [📄 License](#-license)
 - [📧 Contact](#-contact)
+
+</details>
 
 ---
 
@@ -104,9 +101,13 @@ Experience the **Constraint Satisfaction Problem (CSP)** solver in action. The l
 
 ### 🎥 Live Preview
 
-> **[🚀 Launch Live Application](https://amkhodaei83.github.io/csp-sudoku-visualizer)**
->
-> *No installation required. Works on all modern browsers.*
+<div align="center">
+  <a href="https://amkhodaei83.github.io/csp-sudoku-visualizer">
+    <img src="https://img.shields.io/badge/PLAY_NOW-Visit_Live_Demo-FFD700?style=for-the-badge&logo=google-chrome&logoColor=black" alt="Play Now Button" height="35" />
+  </a>
+  <p><em>(No installation required. Works on all modern browsers.)</em></p>
+</div>
+
 
 ### 📸 Application Gallery
 
