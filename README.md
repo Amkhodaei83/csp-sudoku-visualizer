@@ -309,12 +309,12 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ## 📧 Contact & Acknowledgments
 
-**Project Lead:** Amir Hossein Khodaei ([@Amkhodaei83](https://github.com/Amkhodaei83))
+**Project Lead:** Amir Hossein Khodaei ([amir-hossein-khodae](https://github.com/amir-hossein-khodae))
 
-<a href="https://github.com/Amkhodaei83">
+<a href="https://github.com/amir-hossein-khodae">
   <img src="https://img.shields.io/badge/GitHub-Amkhodaei83-181717?style=for-the-badge&logo=github" alt="GitHub Profile">
 </a>
-<a href="mailto:amkhodaei83@gmail.com">
+<a href="mailto:amkhossein@gmail.com">
   <img src="https://img.shields.io/badge/Email-Contact_Me-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email Contact">
 </a>
 
