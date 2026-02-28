@@ -10,7 +10,7 @@
 *   [گیت‌هاب پروژه (Source Code)](https://github.com/amir-hossein-khodaei/ai-sudoku-csp-visualizer)
 
 برای مشاهده و تست عملکرد برنامه بدون نیاز به نصب، می‌توانید از لینک زیر استفاده کنید:
-*   [اجرای آنلاین (Live Demo)](https://amkhodaei83.github.io/csp-sudoku-visualizer)
+*   [اجرای آنلاین (Live Demo)](https://amir-hossein-khodaei.github.io/ai-sudoku-csp-visualizer)
 
 | **Jigsaw 6x6 Mode** | **Standard 9x9 Mode** |
 |:---:|:---:|

@@ -4,14 +4,14 @@
 ![CSP Sudoku Visualizer Banner](https://capsule-render.vercel.app/api?type=waving&color=00C2FF&height=220&section=header&text=CSP%20Sudoku%20Visualizer&fontSize=80&fontAlignY=35&desc=AI%20Constraint%20Satisfaction%20Problem%20Solver&descAlignY=60&descSize=25&animation=fadeIn)
 
 <!-- Dynamic Typing SVG for Feature Highlights -->
-<a href="https://amkhodaei83.github.io/csp-sudoku-visualizer">
+<a href="https://amir-hossein-khodaei.github.io/ai-sudoku-csp-visualizer">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1000&color=334155&center=true&vCenter=true&width=600&lines=Backtracking+Search+%26+Forward+Checking;Arc+Consistency+(AC-3)+Pre-processing;MRV+%26+LCV+Heuristics;Interactive+3D+Robot+Companion;Jigsaw+(6x6)+%26+Standard+(9x9)+Modes" alt="Typing SVG: AI Features" />
 </a>
 
 <!-- Badges: Critical for Trust and Quick Info -->
 <p align="center">
-  <a href="https://github.com/amir-hossein-khodaei/csp-sudoku-visualizer/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/amir-hossein-khodaei/csp-sudoku-visualizer?style=for-the-badge&color=00C2FF" alt="License: MIT">
+  <a href="https://github.com/amir-hossein-khodaei/ai-sudoku-csp-visualizer/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/amir-hossein-khodaei/ai-sudoku-csp-visualizer?style=for-the-badge&color=00C2FF" alt="License: MIT">
   </a>
   <a href="https://react.dev">
     <img src="https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="Built with React 18">
@@ -27,7 +27,7 @@
 
 <!-- Action Buttons -->
 <p align="center">
-  <a href="https://amkhodaei83.github.io/csp-sudoku-visualizer">
+  <a href="https://amir-hossein-khodaei.github.io/ai-sudoku-csp-visualizer">
     <img src="https://img.shields.io/badge/🔴_Live_Demo-Play_Now-ffd700?style=for-the-badge&logoColor=black" alt="View Live Demo" height="35">
   </a>
   <a href="#-getting-started">
@@ -102,7 +102,7 @@ Experience the **Constraint Satisfaction Problem (CSP)** solver in action. The l
 ### 🎥 Live Preview
 
 <div align="center">
-  <a href="https://amkhodaei83.github.io/csp-sudoku-visualizer">
+  <a href="https://amir-hossein-khodaei.github.io/ai-sudoku-csp-visualizer">
     <img src="https://img.shields.io/badge/PLAY_NOW-Visit_Live_Demo-FFD700?style=for-the-badge&logo=google-chrome&logoColor=black" alt="Play Now Button" height="35" />
   </a>
   <p><em>(No installation required. Works on all modern browsers.)</em></p>
@@ -166,8 +166,8 @@ Ensure you have the following installed:
 
 1.  **Clone the Repository**
     ```bash
-    git clone https://github.com/amir-hossein-khodaei/csp-sudoku-visualizer.git
-    cd csp-sudoku-visualizer
+    git clone https://github.com/amir-hossein-khodaei/ai-sudoku-csp-visualizer.git
+    cd ai-sudoku-csp-visualizer
     ```
 
 2.  **Install Dependencies**
