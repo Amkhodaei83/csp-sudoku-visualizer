@@ -7,7 +7,7 @@
 
 **لینک‌های پروژه:**
 کد منبع و فایل‌های پروژه در مخزن زیر قابل دسترسی است:
-*   [گیت‌هاب پروژه (Source Code)](https://github.com/Amkhodaei83/csp-sudoku-visualizer)
+*   [گیت‌هاب پروژه (Source Code)](https://github.com/amir-hossein-khodaei/ai-sudoku-csp-visualizer)
 
 برای مشاهده و تست عملکرد برنامه بدون نیاز به نصب، می‌توانید از لینک زیر استفاده کنید:
 *   [اجرای آنلاین (Live Demo)](https://amkhodaei83.github.io/csp-sudoku-visualizer)
@@ -118,7 +118,7 @@ export const generateJigsawPuzzle = (mapArray, difficulty = 0.5) => {
     return puzzle;
 };
 ```
-🔗 [مشاهده فایل کامل: src/algorithms/JigsawGenerator.js](https://github.com/Amkhodaei83/csp-sudoku-visualizer/blob/main/src/algorithms/JigsawGenerator.js)
+🔗 [مشاهده فایل کامل: src/algorithms/JigsawGenerator.js](https://github.com/amir-hossein-khodaei/ai-sudoku-csp-visualizer/blob/main/src/algorithms/JigsawGenerator.js)
 
 ---
 
@@ -140,7 +140,7 @@ _buildConstraintGraph() {
     }
 }
 ```
-🔗 [مشاهده فایل کامل: src/algorithms/CSP.js](https://github.com/Amkhodaei83/csp-sudoku-visualizer/blob/main/src/algorithms/CSP.js)
+🔗 [مشاهده فایل کامل: src/algorithms/CSP.js](https://github.com/amir-hossein-khodaei/ai-sudoku-csp-visualizer/blob/main/src/algorithms/CSP.js)
 
 ---
 
@@ -173,7 +173,7 @@ function* backtrack(depth = 0) {
     return false;
 }
 ```
-🔗 [مشاهده فایل کامل: src/algorithms/Solver.js](https://github.com/Amkhodaei83/csp-sudoku-visualizer/blob/main/src/algorithms/Solver.js)
+🔗 [مشاهده فایل کامل: src/algorithms/Solver.js](https://github.com/amir-hossein-khodaei/ai-sudoku-csp-visualizer/blob/main/src/algorithms/Solver.js)
 
 ---
 
@@ -199,7 +199,7 @@ export const selectNextVariable = (csp, strategy) => {
     // ... default to FIRST_EMPTY
 };
 ```
-🔗 [مشاهده فایل کامل: src/algorithms/Heuristics.js](https://github.com/Amkhodaei83/csp-sudoku-visualizer/blob/main/src/algorithms/Heuristics.js)
+🔗 [مشاهده فایل کامل: src/algorithms/Heuristics.js](https://github.com/amir-hossein-khodaei/ai-sudoku-csp-visualizer/blob/main/src/algorithms/Heuristics.js)
 
 ---
 
@@ -221,7 +221,7 @@ export const orderDomainValues = (csp, varIndex, strategy) => {
     return values; // Default: Ascending (1, 2, 3...)
 };
 ```
-🔗 [مشاهده فایل کامل: src/algorithms/Heuristics.js](https://github.com/Amkhodaei83/csp-sudoku-visualizer/blob/main/src/algorithms/Heuristics.js)
+🔗 [مشاهده فایل کامل: src/algorithms/Heuristics.js](https://github.com/amir-hossein-khodaei/ai-sudoku-csp-visualizer/blob/main/src/algorithms/Heuristics.js)
 
 ---
 
@@ -247,7 +247,7 @@ pruneNeighbors(varIndex, value) {
     return { success: true, pruned };
 }
 ```
-🔗 [مشاهده فایل کامل: src/algorithms/CSP.js](https://github.com/Amkhodaei83/csp-sudoku-visualizer/blob/main/src/algorithms/CSP.js)
+🔗 [مشاهده فایل کامل: src/algorithms/CSP.js](https://github.com/amir-hossein-khodaei/ai-sudoku-csp-visualizer/blob/main/src/algorithms/CSP.js)
 
 ---
 
@@ -270,7 +270,7 @@ export function* ac3Generator(csp) {
     }
 }
 ```
-🔗 [مشاهده فایل کامل: src/algorithms/AC3.js](https://github.com/Amkhodaei83/csp-sudoku-visualizer/blob/main/src/algorithms/AC3.js)
+🔗 [مشاهده فایل کامل: src/algorithms/AC3.js](https://github.com/amir-hossein-khodaei/ai-sudoku-csp-visualizer/blob/main/src/algorithms/AC3.js)
 
 ## ۵. تحلیل کارایی الگوریتم‌ها
 

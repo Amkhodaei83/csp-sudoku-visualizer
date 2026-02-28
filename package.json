@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://Amkhodaei83.github.io/csp-sudoku-visualizer",
+  "homepage": "https://amir-hossein-khodaei.github.io/ai-sudoku-csp-visualizer",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
