@@ -10,8 +10,8 @@
 
 <!-- Badges: Critical for Trust and Quick Info -->
 <p align="center">
-  <a href="https://github.com/Amkhodaei83/csp-sudoku-visualizer/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/Amkhodaei83/csp-sudoku-visualizer?style=for-the-badge&color=00C2FF" alt="License: MIT">
+  <a href="https://github.com/amir-hossein-khodaei/csp-sudoku-visualizer/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/amir-hossein-khodaei/csp-sudoku-visualizer?style=for-the-badge&color=00C2FF" alt="License: MIT">
   </a>
   <a href="https://react.dev">
     <img src="https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="Built with React 18">
@@ -166,7 +166,7 @@ Ensure you have the following installed:
 
 1.  **Clone the Repository**
     ```bash
-    git clone https://github.com/Amkhodaei83/csp-sudoku-visualizer.git
+    git clone https://github.com/amir-hossein-khodaei/csp-sudoku-visualizer.git
     cd csp-sudoku-visualizer
     ```
 
@@ -309,10 +309,10 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ## 📧 Contact & Acknowledgments
 
-**Project Lead:** Amir Hossein Khodaei ([@Amkhodaei83](https://github.com/Amkhodaei83))
+**Project Lead:** Amir Hossein Khodaei ([@amir-hossein-khodaei](https://github.com/amir-hossein-khodaei))
 
-<a href="https://github.com/Amkhodaei83">
-  <img src="https://img.shields.io/badge/GitHub-Amkhodaei83-181717?style=for-the-badge&logo=github" alt="GitHub Profile">
+<a href="https://github.com/amir-hossein-khodaei">
+  <img src="https://img.shields.io/badge/GitHub-amir-hossein-khodaei-181717?style=for-the-badge&logo=github" alt="GitHub Profile">
 </a>
 <a href="mailto:amkhodaei83@gmail.com">
   <img src="https://img.shields.io/badge/Email-Contact_Me-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email Contact">
